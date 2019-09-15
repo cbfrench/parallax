@@ -36,7 +36,12 @@ $(window).load(function(){
             speed = 5;
         }
         if(speed != 0){
-            $img.css("min-height", pos.height * 1.5);
+            if($img.width() > pos.width * 2){
+                $img.css("max-height", pos.height * 2);
+            }
+            else{
+                $img.css("min-height", pos.height * 2);
+            }
             $img.css("left", -$img.width() / 2 + windowWidth/2);
         }
 
